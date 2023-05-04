@@ -17,8 +17,8 @@
 perturbee par un objet
 
 ### TODO
-- Les bords ne fonctionnent pas bien
-- Rendre la simulation realiste
+- Erreurs aux bords pouvant induire une vitesse nuisible, non physique
+- Rendre la simulation realiste: entre autre:
     - Implementer de vraies valeurs de densite, etc
     - Implementer un vrai code couleur avec legende
 - Pouvoir placer ses obstacles en appuyant sur les carres
@@ -28,7 +28,7 @@ perturbee par un objet
 - Ajouter la possibilite d'avoir de la gravite
 - Optimisation de la memoire utilisee
 
-
 ### Ressources utilisees
 - https://matthias-research.github.io/pages/tenMinutePhysics/17-fluidSim.pdf
 - https://github.com/yewstack/yew/tree/master/examples/game_of_life
++ documentation Rust, Yew
