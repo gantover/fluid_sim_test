@@ -1,7 +1,7 @@
 # Test de simulation de fluide 
 
 > lien pour essayer : https://gantover.github.io/fluid_sim_test/
-![Illustration](illustration.jpeg)
+<img src="illustration.jpeg"  width="50%" height="50%">
 
 ### Objectif
 - experimenter avec **yew** : framework frontend en rust remplacant l'habituel javascript
