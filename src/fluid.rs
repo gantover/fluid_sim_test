@@ -39,10 +39,10 @@ pub struct Fluid {
 
 impl Fluid {
     pub fn new(size_x: usize, size_y: usize) -> Fluid {
-        let mut u: Matrice = Matrice::new(size_x, size_y, 0.);
-        let mut v: Matrice = Matrice::new(size_x, size_y, 0.);
+        let u: Matrice = Matrice::new(size_x, size_y, 0.);
+        let v: Matrice = Matrice::new(size_x, size_y, 0.);
         let mut s: Matrice = Matrice::new(size_x, size_y, 1.);
-        let mut p: Matrice = Matrice::new(size_x, size_y, 0.);
+        let p: Matrice = Matrice::new(size_x, size_y, 0.);
         for col_id in 0..size_x {
             s.rows[0][col_id] = 0.;
             s.rows[size_y-1][col_id] = 0.;
@@ -87,17 +87,3 @@ impl Fluid {
         }
     }
 }
-
-// fn main() {
-//     let mut fl = Fluid::new(10, 10);
-//     fl.apply_gravity();
-//     fl.calculate();
-//     fl.p.show();
-//     println!();
-//     fl.calculate();
-//     fl.p.show();
-//     println!();
-//     fl.calculate();
-//     fl.p.show();
-// }
-
