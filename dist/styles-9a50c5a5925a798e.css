@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: black;
+}
+
+.special_button {
+  margin-top: 5%;
+  width: 20%;
+  background-color: blueviolet;
+}
+
+.special_par {
+  color: white;
+}
+
+.cellule {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 0px solid #ccc;
+}
+
+.cells_area {
+  width: 94%;
+  margin: 20px auto;
+}
+
+.cells_row {
+  line-height: 0px;
+}
+
+.cells_placeholder {
+  display: inline-block;
+  width: max-content;
+  overflow: hidden;
+  background-color: navy;
+}
