@@ -13,11 +13,12 @@
 
 ### Etat actuel
 - Simulation de la repartission de pression d'un fluide avec valeurs non realiste
-- Une impulsion est donnee sur la moitie du mur gauche et on observe la repartission de pression
-perturbee par un objet
+- Une impulsion est donnee a droite d'un obstacle et on observe la repartission de pression
+perturbee par cet objet
+- Probleme aux bords induisant potentiellement une vitesse nuisible (non physique) suivit d'une pression tendant vers l'infini
 
 ### TODO
-- Erreurs aux bords pouvant induire une vitesse nuisible, non physique
+- Fixer erreurs aux bords
 - Rendre la simulation realiste: entre autre:
     - Implementer de vraies valeurs de densite, etc
     - Implementer un vrai code couleur avec legende

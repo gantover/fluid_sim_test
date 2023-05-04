@@ -52,7 +52,7 @@ impl Fluid {
             s.rows[row_id][size_x-1] = 0.;
         }
         for row_id in size_y/3..size_y-size_y/3 {
-            s.rows[row_id][8] = 0.;
+            s.rows[row_id][9] = 0.;
         }
         Fluid { size_x, size_y, u, v, s, p }
     }
@@ -69,7 +69,7 @@ impl Fluid {
 
     pub fn excitation(&mut self) {
         for row_id in self.size_y/4..self.size_y-self.size_y/4 {
-            self.v.rows[row_id][1] = -1.;
+            self.v.rows[row_id][11] = -2.;
         }
     }
     

@@ -7,9 +7,11 @@ pub enum Msg {
     Stop,
     Start,
     Tick,
+    Toggle,
 }
 
 pub struct App {
+    excitation: bool,
     state: bool,
     message: String,
     fl: Fluid,
@@ -37,20 +39,26 @@ impl Component for App {
     type Properties = ();
     fn create(ctx: &Context<Self>) -> Self {
         let callback = ctx.link().callback(|_| Msg::Tick);
-        let interval = Interval::new(33, move || callback.emit(()));
+        let interval = Interval::new(10, move || callback.emit(()));
         let fl = Fluid::new(50, 50);
-        Self { state: false, message: "hello there".to_string(), fl, _interval: interval}
+        Self { excitation: true, state: false, message: "On start, an obstacle will appear".to_string(), fl, _interval: interval}
     }
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::Stop => { self.state = false; self.change_message(); true }
-            Msg::Start => { self.state = true; self.fl.excitation(); self.change_message(); true }
+            Msg::Start => { self.state = true; self.change_message(); true }
             Msg::Tick => { 
                 if self.state {
+                    if self.excitation {
+                        self.fl.excitation()
+                    }
                     self.fl.calculate(); 
                     true
                 }
                 else { false }
+            }
+            Msg::Toggle => {
+                self.excitation = !self.excitation; true
             }
         }
     }
@@ -69,6 +77,7 @@ impl Component for App {
         };
         html! {
         <div>
+            <button class="special_button" onclick={ctx.link().callback(|_| Msg::Toggle)}>{"Toggle Excitation"}</button>
             <button class="special_button" onclick={ctx.link().callback(|_| Msg::Start)}>{"Start"}</button>
             <button class="special_button" onclick={ctx.link().callback(|_| Msg::Stop)}>{"Stop"}</button>
             <section class="cells_area">
@@ -79,7 +88,9 @@ impl Component for App {
                 </div>
             </section>
             <p class="special_par">
-                { &self.message }
+                { "status simulation: " }{ &self.message } <br/>
+                { "status excitation: " } { &self.excitation } <br/>
+                { "The excitation comes from the obstacle, it can be toggled on and off" }
             </p>
         </div>
         }
