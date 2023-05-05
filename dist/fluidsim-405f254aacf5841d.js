@@ -636,7 +636,7 @@ function initSync(module) {
 
 async function init(input) {
     if (typeof input === 'undefined') {
-        input = new URL('fluidsim-196c0590595beed7_bg.wasm', import.meta.url);
+        input = new URL('fluidsim-405f254aacf5841d_bg.wasm', import.meta.url);
     }
     const imports = getImports();
 
